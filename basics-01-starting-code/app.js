@@ -1,12 +1,21 @@
 const app = Vue.createApp({
   data() {
     return {
-      message: 'Finish the course and learn Vue!',
+      messageA: 'Finish the course and learn Vue!',
+      messageB: 'Master Vue and build awesome apps!!',
       vueLink: 'https://vuejs.org/',
     };
+  },
+  methods: {
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        return this.messageA;
+      } else {
+        return this.messageB;
+      }
+    },
   },
 });
 
 app.mount('#user-goal');
-
-// this is a commit test
