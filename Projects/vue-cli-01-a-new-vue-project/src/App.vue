@@ -24,17 +24,17 @@ export default {
     return {
       friends: [
         {
-          id: 'manuel',
-          name: 'Manuel Lorenz',
-          phone: '321 434 9073',
-          email: 'manuel@localhost.com',
+          id: "manuel",
+          name: "Manuel Lorenz",
+          phone: "321 434 9073",
+          email: "manuel@localhost.com",
           isFavorite: true,
         },
         {
-          id: 'binky',
-          name: 'Binky Boy',
-          phone: '321 436 1792',
-          email: 'binky_boy5000@localhost.com',
+          id: "binky",
+          name: "Binky Boy",
+          phone: "321 436 1792",
+          email: "binky_boy5000@localhost.com",
           isFavorite: true,
         },
       ],
@@ -64,13 +64,13 @@ export default {
 };
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 body {
