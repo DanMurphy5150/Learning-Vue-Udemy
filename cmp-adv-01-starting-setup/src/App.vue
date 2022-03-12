@@ -1,7 +1,16 @@
 <template>
   <div>
     <the-header></the-header>
-    <badge-list></badge-list>
+    <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
+    <button @click="setSelectedComponent('active-goals')">Active Goals</button>
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+    <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>
+    <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals> -->
+
+    <!-- Keeping these here for reference --pre UI cleanup code -->
+    <!-- <badge-list></badge-list>
     <user-info
       :full-name="activeUser.name"
       :info-text="activeUser.description"
@@ -12,31 +21,37 @@
         <h2>{{ slotProps.item }}</h2>
         <p>{{ slotProps.anotherProp }}</p>
       </template>
-    </course-goals>
+    </course-goals> -->
   </div>
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-import BadgeList from "./components/BadgeList.vue";
-import UserInfo from "./components/UserInfo.vue";
-import CourseGoals from "./components/CourseGoals.vue";
+// import TheHeader from "./components/TheHeader.vue";
+// import BadgeList from "./components/BadgeList.vue";
+// import UserInfo from "./components/UserInfo.vue";
+// import CourseGoals from "./components/CourseGoals.vue";
+import ActiveGoals from "./components/ActiveGoals.vue";
+import ManageGoals from "./components/ManageGoals.vue";
 
 export default {
   components: {
-    TheHeader,
-    BadgeList,
-    UserInfo,
-    CourseGoals,
+    ActiveGoals,
+    ManageGoals,
   },
   data() {
     return {
+      selectedComponent: "active-goals",
       activeUser: {
-        name: "Maximilian Schwarzmüller",
+        name: "Daniel Murphy",
         description: "Site owner and admin",
         role: "admin",
       },
     };
+  },
+  methods: {
+    setSelectedComponent(cmp) {
+      this.selectedComponent = cmp;
+    },
   },
 };
 </script>
