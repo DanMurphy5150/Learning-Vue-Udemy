@@ -6,7 +6,7 @@
       >Stored Resources</base-button
     >
     <base-button
-      @click="setSelectedTab('add-resource')"
+      @click="setSelectedTab('add-new-resource')"
       :mode="addResourceButtonMode"
       >Add Resources</base-button
     >
@@ -16,12 +16,12 @@
 
 <script>
 import StoredResources from './StoredResources.vue';
-import AddResource from './AddResource.vue';
+import AddNewResource from './AddNewResource.vue';
 
 export default {
   components: {
     StoredResources,
-    AddResource,
+    AddNewResource,
   },
   data() {
     return {
