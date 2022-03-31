@@ -12,7 +12,7 @@ const router = createRouter({
     { path: '/teams', component: TeamsList },
     { path: '/users', component: UsersList },
     // Order matters with routes
-    { path: '/teams/:teamId', component: TeamMembers },
+    { path: '/teams/:teamId', component: TeamMembers, props: true },
   ],
 });
 
