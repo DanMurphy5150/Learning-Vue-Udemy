@@ -9,6 +9,8 @@
       @before-leave="beforeLeave"
       @enter="enter"
       @after-enter="afterEnter"
+      @leave="leave"
+      @after-leave="afterLeave"
     >
       <p v-if="paragraphIsVisible">This is only somtimes visible...</p>
     </transition>
@@ -58,17 +60,32 @@ export default {
     hideUsers() {
       this.usersAreVisible = false;
     },
-    beforeEnter() {
+    beforeEnter(el) {
       console.log('Before enter');
+      el.style.opacity = 0;
     },
     beforeLeave() {
       console.log('before leave');
     },
-    enter() {
+    enter(el) {
       console.log('Enter');
+      let round = 1;
+      setInterval(function () {
+        const interval = (el.style.opacity = round * 0.1);
+        round++;
+        if (round > 10) {
+          clearInterval(interval);
+        }
+      }, 20);
     },
     afterEnter() {
       console.log('after enter');
+    },
+    leave() {
+      console.log('leave');
+    },
+    afterLeave() {
+      console.log('after leave');
     },
   },
 };
@@ -121,9 +138,9 @@ button:active {
   animation: slide-scale 0.3s ease-out forwards;
   /* transform: translateX(-150px); */
 }
-.v-enter-from {
+/* .v-enter-from {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateY(-130px);
 }
 .v-enter-active {
   transition: all 0.3s ease-out;
@@ -141,8 +158,8 @@ button:active {
 }
 .v-leave-to {
   opacity: 0;
-  transform: translateY(30px);
-}
+  transform: translateY(330px);
+} */
 
 .fade-button-enter-from,
 .fade-button-leave-to {
