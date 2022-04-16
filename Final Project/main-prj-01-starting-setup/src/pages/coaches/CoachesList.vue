@@ -1,4 +1,5 @@
 <template>
+  <!-- the !!error coverts the error into a true boolean -->
   <base-dialog :show="!!error" title="An error occurred!" @close="handleError">
     <p>{{ error }}</p>
   </base-dialog>
