@@ -52,5 +52,6 @@ export default {
     }
 
     context.commit('setRequests', requests);
+    console.log('refreshing data');
   },
 };
