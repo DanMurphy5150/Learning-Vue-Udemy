@@ -1,8 +1,9 @@
 export default {
   login() {},
   async signup(context, payload) {
+    const API_KEY = process.env.VUE_APP_COACHES_KEY;
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=',
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
       {
         method: 'POST',
         body: JSON.stringify({

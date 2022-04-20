@@ -60,7 +60,6 @@ export default {
         this.formIsValid = false;
         return;
       }
-<<<<<<< HEAD
       this.isLoading = true;
 
       if (this.mode === 'login') {
@@ -72,9 +71,6 @@ export default {
         });
       }
       this.isLoading = false;
-=======
-      //send http request...
->>>>>>> parent of 2b97598 (added firebase connection for signup)
     },
     switchAuthMode() {
       if (this.mode === 'login') {
