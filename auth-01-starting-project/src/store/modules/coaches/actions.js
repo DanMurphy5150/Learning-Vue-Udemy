@@ -10,7 +10,7 @@ export default {
     };
 
     const response = await fetch(
-      `https://coaching-app-add35-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+      `https://coaching-app---udemy-default-rtdb.firebaseio.com/coaches/${userId}.json`,
       {
         method: 'PUT',
         body: JSON.stringify(coachData),
@@ -34,7 +34,7 @@ export default {
     }
 
     const response = await fetch(
-      `https://coaching-app-add35-default-rtdb.firebaseio.com/coaches.json`
+      `https://coaching-app---udemy-default-rtdb.firebaseio.com/coaches.json`
     );
     const responseData = await response.json();
 

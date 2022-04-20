@@ -5,7 +5,7 @@ export default {
       message: payload.message,
     };
     const response = await fetch(
-      `https://coaching-app-add35-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
+      `https://coaching-app---udemy-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
       {
         method: 'POST',
         body: JSON.stringify(newRequest),
@@ -29,7 +29,7 @@ export default {
   async fetchRequests(context) {
     const coachId = context.rootGetters.userId;
     const response = await fetch(
-      `https://coaching-app-add35-default-rtdb.firebaseio.com/requests/${coachId}.json`
+      `https://coaching-app---udemy-default-rtdb.firebaseio.com/requests/${coachId}.json`
     );
     const responseData = await response.json();
 

@@ -29,6 +29,8 @@ export default {
       password: '',
       formIsValid: true,
       mode: 'login',
+      isLoading: false,
+      error: null,
     };
   },
   computed: {
@@ -48,7 +50,7 @@ export default {
     },
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       this.formIsVlid = true;
       if (
         this.email === '' ||
@@ -58,14 +60,17 @@ export default {
         this.formIsValid = false;
         return;
       }
+      this.isLoading = true;
+
       if (this.mode === 'login') {
         // ...
       } else {
-        this.$store.dispatch('signup', {
+        await this.$store.dispatch('signup', {
           email: this.email,
           password: this.password,
         });
       }
+      this.isLoading = false;
     },
     switchAuthMode() {
       if (this.mode === 'login') {
